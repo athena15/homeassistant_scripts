@@ -129,8 +129,9 @@ function updateSwitchConfig(currentConfig) {
 function checkConnection() {
     log("Checking HA connection...");
     Shelly.call(
-        "HTTP.GET",
+        "HTTP.REQUEST",
         { 
+            method: "GET",
             url: CONFIG.HA_URL,
             headers: {
                 "Authorization": "Bearer " + CONFIG.HA_TOKEN,
